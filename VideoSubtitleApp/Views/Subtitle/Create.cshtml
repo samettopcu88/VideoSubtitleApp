@@ -1,0 +1,27 @@
+﻿@model VideoSubtitleApp.Models.Subtitle
+
+@{
+    ViewData["Title"] = "Add Subtitle";
+}
+
+<h2>Add Subtitle</h2>
+
+<form asp-action="Create" asp-controller="Subtitle" method="post">
+    <input type="hidden" asp-for="VideoId" value="@ViewBag.VideoId" />
+    <div class="form-group">
+        <label asp-for="Text" class="control-label"></label>
+        <textarea asp-for="Text" class="form-control"></textarea>
+        <span asp-validation-for="Text" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="StartTime" class="control-label"></label>
+        <input asp-for="StartTime" class="form-control" />
+        <span asp-validation-for="StartTime" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="EndTime" class="control-label"></label>
+        <input asp-for="EndTime" class="form-control" />
+        <span asp-validation-for="EndTime" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Save</button>
+</form>

@@ -1,0 +1,23 @@
+﻿@model IEnumerable<VideoSubtitleApp.Models.Video>
+
+<h2>Uploaded Videos</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>File Path</th>
+            <th>Upload Date</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var video in Model)
+        {
+            <tr>
+                <td>@video.Title</td>
+                <td>@video.FilePath</td>
+                <td>@video.UploadDate</td>
+            </tr>
+        }
+    </tbody>
+</table>
